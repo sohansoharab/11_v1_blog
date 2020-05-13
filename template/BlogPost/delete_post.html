@@ -1,0 +1,15 @@
+{% extends 'BlogPost/base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <h2>Hello {{ post.author.username }}</h2>
+                <h3>You sure you wanna delete,</h3>
+                <h3><strong>'{{ post.title }}'</strong></h3>
+                <br>
+                <input type="submit" value="Confirm" class="btn btn-danger">
+            </form>
+        </div>
+    </div>
+{% endblock %}

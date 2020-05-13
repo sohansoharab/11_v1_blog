@@ -1,0 +1,18 @@
+{% extends 'BlogPost/base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% if all_post %}
+                <ol>
+                    {% for post in all_post %}
+                        <li>
+                            <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ol>
+            {% else %}
+                <h4 class="display">Sorry there is no post available!</h4>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
